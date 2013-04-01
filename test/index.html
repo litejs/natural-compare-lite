@@ -1,0 +1,13 @@
+<script src="../natural-compare-lite.js"></script>
+<body>
+<div id=result></div>
+<script>
+var a = ["z1.doc", "z10.doc", "z17.doc", "z2.doc", "z23.doc", "z3.doc"]
+a.sort(String.natural_compare)
+
+document.getElementById("result").innerHTML = a.join()
+</script>
+
+</body>
+
+
