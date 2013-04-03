@@ -18,6 +18,11 @@ var a = ["z1.doc", "z10.doc", "z17.doc", "z2.doc", "z23.doc", "z3.doc"]
 a.sort(String.natural_compare)
 ```
 
+External links
+--------------
+
+- [jsperf test](http://jsperf.com/natural-sort-2/2)
+
 
 ### Licence
 
