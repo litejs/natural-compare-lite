@@ -1,6 +1,6 @@
 process.chdir( process.argv[1].replace(/[^/]+$/, "") )
 
-require("../natural-compare-lite.js")
+require("../natural-compare.js")
 
 
 var found = 0

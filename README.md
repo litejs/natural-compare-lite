@@ -1,13 +1,13 @@
 
-[1]: https://raw.github.com/litejs/natural-compare-lite/master/min.js
-[2]: https://raw.github.com/litejs/natural-compare-lite/master/natural-compare-lite.js
+[1]: https://raw.github.com/litejs/natural-compare-lite/master/min.natural-compare.js
+[2]: https://raw.github.com/litejs/natural-compare-lite/master/natural-compare.js
 
 
 Natural Order String Comparison
 ===============================
 
 Download [compressed][1] 
-(412 bytes or 267 bytes gzipped)
+(366 bytes, 259 bytes gzipped)
 or [uncompressed][2] source.
 
 

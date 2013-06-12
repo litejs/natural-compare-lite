@@ -1,9 +1,9 @@
 {
   "name": "natural-compare-lite",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "license": "MIT",
   "description": "Natural Order String Comparison for Sorting",
-  "main": "natural-compare-lite.js",
+  "main": "natural-compare.js",
   "author": "Lauri Rooden <lauri@rooden.ee>",
 	"repository": {
 		"type": "git",
