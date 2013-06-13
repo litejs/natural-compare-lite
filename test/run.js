@@ -25,6 +25,8 @@ var found = 0
 	, String.natural_compare("a2", "a1"), 1
 
 	, String.natural_compare("a1", "a11"), -1
+	, String.natural_compare("a11","a12"), -1
+	, String.natural_compare("a12","a11"), 1
 	, String.natural_compare("a11", "a1"), 1
 
 	, String.natural_compare("a1a", "a1"), 1
