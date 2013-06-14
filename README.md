@@ -9,7 +9,7 @@ Natural Order String Comparison
 ===============================
 
 Download [compressed][1] 
-(366 bytes, 259 bytes gzipped)
+(364 bytes, 258 bytes gzipped)
 or [uncompressed][2] source.
 
 [![Build Status][travis-img]][travis-url]
