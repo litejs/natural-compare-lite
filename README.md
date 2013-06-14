@@ -1,6 +1,8 @@
 
 [1]: https://raw.github.com/litejs/natural-compare-lite/master/min.natural-compare.js
 [2]: https://raw.github.com/litejs/natural-compare-lite/master/natural-compare.js
+[travis-img]: https://travis-ci.org/litejs/natural-compare-lite.png?branch=master
+[travis-url]: https://travis-ci.org/litejs/natural-compare-lite
 
 
 Natural Order String Comparison
@@ -10,6 +12,7 @@ Download [compressed][1]
 (366 bytes, 259 bytes gzipped)
 or [uncompressed][2] source.
 
+[![Build Status][travis-img]][travis-url]
 
 ### Usage
 
