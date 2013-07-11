@@ -1,10 +1,10 @@
 {
-  "name": "natural-compare-lite",
-  "version": "0.2.0",
-  "license": "MIT",
-  "description": "Natural Order String Comparison for Sorting",
-  "main": "natural-compare.js",
-  "author": "Lauri Rooden <lauri@rooden.ee>",
+	"name": "natural-compare-lite",
+	"version": "0.2.0",
+	"license": "MIT",
+	"description": "Natural Order String Comparison for Sorting",
+		"main": "natural-compare.js",
+	"author": "Lauri Rooden <lauri@rooden.ee>",
 	"repository": {
 		"type": "git",
 		"url": "git://github.com/litejs/natural-compare-lite.git"
@@ -12,16 +12,16 @@
 	"bugs": {
 		"url": "https://github.com/litejs/natural-compare-lite/issues"
 	},
-  "scripts": {
-    "test": "node test/run.js"
-  },
-  "keywords": [
-    "string",
-    "natural",
-    "order",
-    "sort",
-    "compare",
-    "litejs"
-  ],
+	"scripts": {
+		"test": "node test/run.js"
+	},
+	"keywords": [
+		"string",
+		"natural",
+		"order",
+		"sort",
+		"compare",
+		"litejs"
+	],
 	"readmeFilename": "README.md"
 }
