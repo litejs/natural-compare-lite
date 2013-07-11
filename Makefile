@@ -1,55 +1,81 @@
 
 
-read_conf = $(shell sed '/"$(1)":/!d;s///;s/[ ,"]//g' package.json)
-wc        = $(shell wc -c <"$(1)")
+
+read_conf = $(shell sed '/"$(1)":/!d;s///;s/[ 	,"]//g' package.json)
+
+NAME      = $(call read_conf,name)
+MAIN      = $(call read_conf,main)
+VERSION   = $(call read_conf,version)
+ALL      := min.$(MAIN)
+CUSTOM   :=
 
 
+
+compile_output := compiled_code
 define COMPILE
-	@curl -s \
-		    --data-urlencode 'output_info=compiled_code' \
-				--data-urlencode 'output_format=text' \
-				--data-urlencode 'js_code@$(1)' \
-				'http://closure-compiler.appspot.com/compile' > $(2)
+	@curl -s --data-urlencode 'output_info=$(compile_output)' \
+		--data-urlencode 'output_format=text' \
+		--data-urlencode 'js_code@$(1)' \
+		'http://closure-compiler.appspot.com/compile' > $(2)
 	@echo "# Compiled $(1) -> $(2) from $$(wc -c <"$(1)") to $$(wc -c <"$(2)") bytes"
 endef
 
 define TOGGLE
 	# Toggle comments '$(1)' and save to $(2)
-	@sed -E -e 's,//\*\* ($(1)),/* $(1),' $(FILE) > $(2)
+	@sed -E -e 's,//\*\* ($(1)),/* $(1),' $(MAIN) > $(2)
+endef
+
+define CUSTOM_TARGET
+min.$(1).js: $(MAIN)
+	$$(call TOGGLE,$(flags-$(1)),$(1).js)
+	$$(call COMPILE,$(1).js,$$@)
+	@rm $(1).js
 endef
 
 
-NAME=$(call read_conf,name)
-FILE=$(call read_conf,main)
-VERSION=$(call read_conf,version)
-MIN=min.$(FILE)
 
-LIST :=
-SETUPS = $(foreach x,$(LIST),min.$(x).js)
+-include *.mk
+
+
+ALL += $(foreach x,$(CUSTOM),min.$(x).js)
+
+
+$(foreach x, $(CUSTOM), $(eval $(call CUSTOM_TARGET,$(x)) ))
+
 
 .PHONY: test
 
-all: $(MIN) $(SETUPS) test update-readme
-	# Setups: $(SETUPS)
+#- Build commands are:
+#- 
+#-    all             Build everything
+#-    test            Run tests
+#- 
+help:
+	@sed -n "/^#- /s///p" Makefile
+
+
+all: $(ALL) test update-readme
+	# Setups: $(CUSTOM)
 
 
 min.%.js: %.js package.json
+	# target min.%.js
 	@sed -i '/@version/s/[^ ]*$$/$(VERSION)/' $*.js
 	$(call COMPILE,$*.js,$@)
 
 
 
-update-readme: SIZE=$(shell cat $(MIN) | wc -c)
-update-readme: SIZE_GZ=$(shell gzip -c $(MIN) | wc -c)
-update-readme: $(FILE)
-	@printf "Original Size %s Compiled Size %s or %s gzipped\n" \
-	        "$$(cat $(FILE) | wc -c) bytes" \
-	        "$(SIZE) bytes" \
-	        "$(SIZE_GZ) bytes"
-	@sed -i '/ bytes, .* gzipped/s/.*/($(SIZE) bytes, $(SIZE_GZ) bytes gzipped)/' README.md
+%.error: compile_output=errors
+%.error: %.js
+	$(call COMPILE,$*.js,$@)
+	@cat $@
+
+
+update-readme: $(MAIN)
+	@sed -i "/ bytes, .* gzipped/s/.*/($$(wc -c <min.$(MAIN)) bytes, $$(gzip -c min.$(MAIN) | wc -c) bytes gzipped)/" README.md
 
 update-readme-from-source:
-	@sed -e '/\/\*/,/\*\//!d' -e 's,[ /]*\*[ /]\?,,' -e 's/^@/    @/' $(FILE) > README.md
+	@sed -e '/\/\*/,/\*\//!d' -e 's,[ /]*\*[ /]\?,,' -e 's/^@/    @/' $(MAIN) > README.md
 
 
 update-tests:
@@ -58,18 +84,10 @@ update-tests:
 css-docs:
 	@styledocco -n "$(NAME)" css
 
-error:
-	@curl -s \
-		    --data-urlencode 'output_info=errors' \
-				--data-urlencode 'output_format=text' \
-				--data-urlencode 'js_code@$(FILE)' \
-				'http://closure-compiler.appspot.com/compile'
 
 test:
-	@node test/run.js
+	@node tests/run.js
 
 
-print: *.js
-	@echo $?
-	touch print
+
 

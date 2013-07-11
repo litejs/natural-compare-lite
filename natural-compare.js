@@ -2,14 +2,14 @@
 
 
 /*
-* @version  0.2.0
+* @version  0.3.0
 * @author   Lauri Rooden - https://github.com/litejs/natural-compare-lite
 * @license  MIT License  - http://lauri.rooden.ee/mit-license.txt
 */
 
 
 
-String.natural_compare = function(a, b) {
+String.naturalCompare = function(a, b) {
 	var c, ca = 1, cb, i, ia = 0, ib = 0
 
 	if (a != b) while (ca) {
