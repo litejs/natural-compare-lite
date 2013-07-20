@@ -23,6 +23,21 @@ or [uncompressed][2] source.
 
 [![Build Status][travis-img]][travis-url]
 
+
+### Installation
+
+- In browser
+
+```html
+<script src=min.natural-compare.js></script>
+```
+
+- In node.js `npm install natural-compare-lite`
+
+```javascript
+require("natural-compare-lite")
+```
+
 ### Usage
 
 ```javascript
@@ -34,7 +49,7 @@ a.sort(String.naturalCompare)
 External links
 --------------
 
-- [jsperf test](http://jsperf.com/natural-sort-2/2)
+- [jsperf test](http://jsperf.com/natural-sort-2/5)
 
 
 ### Licence
