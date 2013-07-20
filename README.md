@@ -14,7 +14,7 @@ Currently the algorithm isn't designed to work with negative signs
 or numbers expressed in scientific notation.
 
 Download [compressed][1] 
-(363 bytes, 257 bytes gzipped)
+(359 bytes, 250 bytes gzipped)
 or [uncompressed][2] source.
 
 [![Build Status][travis-img]][travis-url]

@@ -1,6 +1,6 @@
 {
 	"name": "natural-compare-lite",
-	"version": "0.3.0",
+	"version": "0.3.1",
 	"license": "MIT",
 	"description": "Sort strings in natural order",
 	"main": "natural-compare.js",
