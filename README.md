@@ -5,6 +5,10 @@
 [travis-url]: https://travis-ci.org/litejs/natural-compare-lite
 
 
+    @version  0.3.1
+    @date     2013-07-21
+
+
 Natural Order String Comparison
 ===============================
 
