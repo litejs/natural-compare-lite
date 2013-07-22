@@ -1,8 +1,8 @@
 {
 	"name": "natural-compare-lite",
-	"version": "0.3.1",
+	"version": "0.3.2",
 	"license": "MIT",
-	"description": "Sort strings in natural order",
+	"description": "Compare strings containing a mix of letters and numbers in the way a human being would in sort order.",
 	"main": "natural-compare.js",
 	"author": "Lauri Rooden <lauri@rooden.ee>",
 	"repository": {

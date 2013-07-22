@@ -38,16 +38,24 @@ endef
 -include *.mk
 
 
+# Reset the default goal.
+.DEFAULT_GOAL :=
 
-.PHONY: help test
+.PHONY: help test clean
 
 #- Build commands are:
 #- 
 #-    all             Build everything
 #-    test            Run tests
+#-    clean           Remove untracked files
 #- 
 help:
 	@sed -n "/^#- /s///p" $(MAKEFILE_LIST)
+
+clean:
+	@git clean -xdf
+
+
 
 ALL += $(foreach x,$(CUSTOM),min.$(x).js)
 $(foreach x, $(CUSTOM), $(eval $(call CUSTOM_TARGET,$(x)) ))
@@ -67,7 +75,7 @@ min.%.js: %.js package.json
 	@cat $@
 
 
-update-readme: $(MAIN) package.json
+update-readme:: $(MAIN) package.json
 	@sed -i '/@version/s/[^ ]*$$/$(VERSION)/' README.md
 	@sed -i '/@date/s/[^ ]*$$/$(DATE)/' README.md
 	@sed -i "/ bytes, .* gzipped/s/.*/($$(wc -c <min.$(MAIN)) bytes, $$(gzip -c min.$(MAIN) | wc -c) bytes gzipped)/" README.md
