@@ -6,7 +6,7 @@
 
 
     @version  0.3.2
-    @date     2013-07-22
+    @date     2013-07-24
 
 
 Natural Compare
@@ -36,6 +36,7 @@ Use it with builtin sort() function.
 ChangeLog
 =========
 
+  * Add more examples to readme (Lauri Rooden)
   * Update readme (Lauri Rooden)
   * Add installation instruction to readme (Lauri Rooden)
   * Add version to readme (Lauri Rooden)
@@ -47,7 +48,6 @@ ChangeLog
   * API CHANGE! Use camelcase (Lauri Rooden)
   * Whitespace fixes (Lauri Rooden)
   * Whitespace fixes (Lauri Rooden)
-  * Add .travis.yml (Lauri Rooden)
 ```
 
 Download [compressed][1] 
@@ -73,9 +73,30 @@ require("natural-compare-lite")
 ### Usage
 
 ```javascript
+// Simple case sensitive example
 var a = ["z1.doc", "z10.doc", "z17.doc", "z2.doc", "z23.doc", "z3.doc"]
 a.sort(String.naturalCompare)
 // ["z1.doc", "z2.doc", "z3.doc", "z10.doc", "z17.doc", "z23.doc"]
+
+// Use wrapper function for case insensitivity
+a.sort(function(a, b){
+  return String.naturalCompare(a.toLowerCase(), b.toLowerCase())  
+})
+
+// In most cases we want to sort an array of objects, 
+// it is best for performance to keep
+// lowercased key in that object. 
+// There are no need to do text transformation
+// on each comparision when sorting.
+
+var a = [ {"name":"John", "surname":"Tiago"}, {"name":"Ed", "surname":"Tatar"}]
+// sort by surname, then by name
+a.map(function(person){
+  person.sort_key = person.surname.toLowerCase() + person.name.toLowerCase()
+})
+a.sort(function(a, b){
+  return String.naturalCompare(a.sort_key, b.sort_key)
+})
 ```
 
 External links

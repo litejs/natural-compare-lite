@@ -2,6 +2,7 @@
 ChangeLog
 =========
 
+  * Add more examples to readme (Lauri Rooden)
   * Update readme (Lauri Rooden)
   * Add installation instruction to readme (Lauri Rooden)
   * Add version to readme (Lauri Rooden)
@@ -15,8 +16,16 @@ ChangeLog
   * Whitespace fixes (Lauri Rooden)
   * Add .travis.yml (Lauri Rooden)
   * Add test (Lauri Rooden)
+
+2013-06-12 version v0.2
+-----------------------
+
   * API CHANGE! Remove toLowerCase (Lauri Rooden)
   * Add test link (Lauri Rooden)
+
+2013-04-04 version v0.1
+-----------------------
+
   * Improve performance (Lauri Rooden)
   * Whitespace fixes (Lauri Rooden)
   * Ass more tests (Lauri Rooden)
