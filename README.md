@@ -6,7 +6,7 @@
 
 
     @version  0.3.2
-    @date     2013-07-24
+    @date     2013-07-26
 
 
 Natural Compare
@@ -31,11 +31,11 @@ whether a reference string comes before or after or is the same
 as the given string in sort order. 
 Use it with builtin sort() function.
 
-
 ```ChangeLog
 ChangeLog
 =========
 
+  * Add more tests and improve Readme (Lauri Rooden)
   * Add more examples to readme (Lauri Rooden)
   * Update readme (Lauri Rooden)
   * Add installation instruction to readme (Lauri Rooden)
@@ -46,7 +46,6 @@ ChangeLog
 -----------------------
 
   * API CHANGE! Use camelcase (Lauri Rooden)
-  * Whitespace fixes (Lauri Rooden)
   * Whitespace fixes (Lauri Rooden)
 ```
 
@@ -74,30 +73,44 @@ require("natural-compare-lite")
 
 ```javascript
 // Simple case sensitive example
-var a = ["z1.doc", "z10.doc", "z17.doc", "z2.doc", "z23.doc", "z3.doc"]
-a.sort(String.naturalCompare)
+var a = ["z1.doc", "z10.doc", "z17.doc", "z2.doc", "z23.doc", "z3.doc"];
+a.sort(String.naturalCompare);
 // ["z1.doc", "z2.doc", "z3.doc", "z10.doc", "z17.doc", "z23.doc"]
 
 // Use wrapper function for case insensitivity
 a.sort(function(a, b){
-  return String.naturalCompare(a.toLowerCase(), b.toLowerCase())  
+  return String.naturalCompare(a.toLowerCase(), b.toLowerCase());
 })
 
-// In most cases we want to sort an array of objects, 
+// In most cases we want to sort an array of objects
+var a = [ {"street":"350 5th Ave", "room":"A-1021"}
+        , {"street":"350 5th Ave", "room":"A-21046-b"} ];
+
+// sort by street, then by room
+a.sort(function(a, b){
+  return String.naturalCompare(a.street, b.street) || String.naturalCompare(a.room, b.room);
+})
+
+// When text transformation is needed (eg toLowerCase()),
 // it is best for performance to keep
-// lowercased key in that object. 
+// transformed key in that object. 
 // There are no need to do text transformation
 // on each comparision when sorting.
+var a = [ {"make":"Audi", "model":"A6"}
+        , {"make":"Kia",  "model":"Rio"} ];
 
-var a = [ {"name":"John", "surname":"Tiago"}, {"name":"Ed", "surname":"Tatar"}]
-// sort by surname, then by name
-a.map(function(person){
-  person.sort_key = person.surname.toLowerCase() + person.name.toLowerCase()
+// sort by make, then by model
+a.map(function(car){
+  car.sort_key = (car.make + " " + car.model).toLowerCase();
 })
 a.sort(function(a, b){
-  return String.naturalCompare(a.sort_key, b.sort_key)
+  return String.naturalCompare(a.sort_key, b.sort_key);
 })
 ```
+
+- Removes leading zeros so "a 1" and "a 001" are equal.
+- Works well with dates in ISO format eg "Rev 2012-07-26.doc".
+
 
 External links
 --------------

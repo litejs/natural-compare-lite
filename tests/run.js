@@ -37,6 +37,9 @@ var found = 0
 	, String.naturalCompare("a11a", "a1a"), 1
 	, String.naturalCompare("a1a", "a11a"), -1
 	, String.naturalCompare("a 1", "a -2"), -1
+	, String.naturalCompare("a 1", "a 001"), 0
+	, String.naturalCompare("a 1", "a 002"), -1
+	, String.naturalCompare("a 2", "a 001"), 1
 	]
 
 for (var i = 0, len = out.length; i < len; ) {

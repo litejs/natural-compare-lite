@@ -8,10 +8,10 @@
 title     = printf "\n%s\n%s\n" "$(1)" "`echo "$(1)"|tr [:print:] "$(2)=$(2)"`"
 git_tags  = git describe --tags --exact-match
 tag_title = NAME=`$(git_tags) $(1) 2>/dev/null` && [ -n "$$NAME" ] && DATE=`git log --format="%ci" -1 $(1)` && $(call title,$${DATE%% *} version $$NAME,-) && echo ""
-git_deps  = .git/HEAD make-readme-files.mk
 comments  = grep -IrinE "^[ 	]*(//|/\*|\#\#*|--+)[ 	]*($(1))" $${SRC-*} | sed -E -e "s,^([^:]*:[0-9]*):[ 	/*\#-]*$(2)(.*),  * \2 \[\1\],"
 
 
+git_deps  = make-readme-files.mk $(wildcard .git/refs/heads/*)
 
 git-all: ChangeLog AUTHORS NEWS THANKS TODO
 
