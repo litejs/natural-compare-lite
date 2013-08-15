@@ -1,16 +1,20 @@
 
 [1]: https://raw.github.com/litejs/natural-compare-lite/master/min.natural-compare.js
 [2]: https://raw.github.com/litejs/natural-compare-lite/master/natural-compare.js
-[travis-img]: https://travis-ci.org/litejs/natural-compare-lite.png?branch=master
+[travis-img]: https://secure.travis-ci.org/litejs/natural-compare-lite.png
 [travis-url]: https://travis-ci.org/litejs/natural-compare-lite
 [nodei-img]: https://nodei.co/npm/natural-compare-lite.png
 [nodei-url]: https://nodei.co/npm/natural-compare-lite/
+[cover-img]: https://coveralls.io/repos/litejs/natural-compare-lite/badge.png
+[cover-url]: https://coveralls.io/r/litejs/natural-compare-lite
+
 
 
 Natural Compare
 ===============
 
-[![Build Status][travis-img]][travis-url]
+[![Build Status][travis-img]][travis-url] 
+[![Coverage Status][cover-img]][cover-url]
 
 [![NPM][nodei-img]][nodei-url]
 
@@ -35,6 +39,8 @@ Use it with builtin sort() function.
 ChangeLog
 =========
 
+  * Add coveralls badge (Lauri Rooden)
+  * Add coveralls and nodei (Lauri Rooden)
   * Add more tests and improve Readme (Lauri Rooden)
   * Add more examples to readme (Lauri Rooden)
   * Update readme (Lauri Rooden)
@@ -44,9 +50,6 @@ ChangeLog
 
 2013-07-11 version v0.3
 -----------------------
-
-  * API CHANGE! Use camelcase (Lauri Rooden)
-  * Whitespace fixes (Lauri Rooden)
 ```
 
 Download [compressed][1] 

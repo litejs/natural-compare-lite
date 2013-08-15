@@ -2,6 +2,8 @@
 ChangeLog
 =========
 
+  * Add coveralls badge (Lauri Rooden)
+  * Add coveralls and nodei (Lauri Rooden)
   * Add more tests and improve Readme (Lauri Rooden)
   * Add more examples to readme (Lauri Rooden)
   * Update readme (Lauri Rooden)
