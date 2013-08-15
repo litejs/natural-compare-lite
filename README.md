@@ -39,6 +39,7 @@ Use it with builtin sort() function.
 ChangeLog
 =========
 
+  * Fix order when just 0 is in string (Lauri Rooden)
   * Add coveralls badge (Lauri Rooden)
   * Add coveralls and nodei (Lauri Rooden)
   * Add more tests and improve Readme (Lauri Rooden)
@@ -53,7 +54,7 @@ ChangeLog
 ```
 
 Download [compressed][1] 
-(359 bytes, 250 bytes gzipped)
+(367 bytes, 258 bytes gzipped)
 or [uncompressed][2] source.
 
 

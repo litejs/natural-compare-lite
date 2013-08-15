@@ -11,6 +11,8 @@ var found = 0
 	, String.naturalCompare("b", "a"), 1
 	, String.naturalCompare("a", "1"), 1
 	, String.naturalCompare("1", "1"), 0
+	, String.naturalCompare("2", "3"), -1
+	, String.naturalCompare("3", "2"), 1
 	, String.naturalCompare("1", "a"), -1
 
 	, String.naturalCompare("a", "ba"), -1
@@ -40,11 +42,13 @@ var found = 0
 	, String.naturalCompare("a 1", "a 001"), 0
 	, String.naturalCompare("a 1", "a 002"), -1
 	, String.naturalCompare("a 2", "a 001"), 1
+	, String.naturalCompare("a 0 a", "a 0 b"), -1
+	, String.naturalCompare("a 0 b", "a 0 a"), 1
 	]
 
 for (var i = 0, len = out.length; i < len; ) {
 	found++
-	if (out[i++] != out[i++]) failed.push(out[i-2] + " != " + out[i-1])
+	if (out[i++] != out[i++]) failed.push("#" + found + " " + out[i-2] + " != " + out[i-1])
 }
 
 console.log(found + " tests found, " + failed.length + " failed.")

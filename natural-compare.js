@@ -2,7 +2,7 @@
 
 
 /*
-* @version  0.3.2
+* @version  0.3.3
 * @author   Lauri Rooden - https://github.com/litejs/natural-compare-lite
 * @license  MIT License  - http://lauri.rooden.ee/mit-license.txt
 */
@@ -24,9 +24,9 @@ String.naturalCompare = function(a, b) {
 		if (cb < 58 && cb > 47) {
 			// number always comes first
 			if (i == -1) return 1
-			ca = a.slice(i, ia)|0
+			ca = (a.slice(i, ia)|0) + 1
 			for (i = ib - 1; c = b.charCodeAt(ib), c < 58 && c > 47; ib++);
-			cb = b.slice(i, ib)|0
+			cb = (b.slice(i, ib)|0) + 1
 		} else if (i > -1) return -1
 
 		if (ca > cb) return 1
