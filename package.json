@@ -13,6 +13,7 @@
 		"url": "https://github.com/litejs/natural-compare-lite/issues"
 	},
 	"scripts": {
+		"travis-test": "istanbul cover ./tests/run.js && (coveralls < coverage/lcov.info || exit 0)",
 		"test": "node tests/run.js"
 	},
 	"keywords": [

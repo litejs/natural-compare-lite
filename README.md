@@ -3,16 +3,16 @@
 [2]: https://raw.github.com/litejs/natural-compare-lite/master/natural-compare.js
 [travis-img]: https://travis-ci.org/litejs/natural-compare-lite.png?branch=master
 [travis-url]: https://travis-ci.org/litejs/natural-compare-lite
-
-
-    @version  0.3.2
-    @date     2013-07-26
+[nodei-img]: https://nodei.co/npm/natural-compare-lite.png
+[nodei-url]: https://nodei.co/npm/natural-compare-lite/
 
 
 Natural Compare
 ===============
 
 [![Build Status][travis-img]][travis-url]
+
+[![NPM][nodei-img]][nodei-url]
 
 Compare strings containing a mix of letters and numbers
 in the way a human being would in sort order.
