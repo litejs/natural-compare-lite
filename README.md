@@ -39,6 +39,7 @@ Use it with builtin sort() function.
 ChangeLog
 =========
 
+  * Use Testman for tests (Lauri Rooden)
   * Fix order when just 0 is in string (Lauri Rooden)
   * Add coveralls badge (Lauri Rooden)
   * Add coveralls and nodei (Lauri Rooden)
@@ -50,7 +51,6 @@ ChangeLog
   * Minor optimization (Lauri Rooden)
 
 2013-07-11 version v0.3
------------------------
 ```
 
 Download [compressed][1] 

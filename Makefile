@@ -92,7 +92,8 @@ css-docs:
 
 
 test:
-	@node tests/run.js
+	@npm install --dev
+	@npm run test
 
 
 

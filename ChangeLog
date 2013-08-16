@@ -2,6 +2,7 @@
 ChangeLog
 =========
 
+  * Use Testman for tests (Lauri Rooden)
   * Fix order when just 0 is in string (Lauri Rooden)
   * Add coveralls badge (Lauri Rooden)
   * Add coveralls and nodei (Lauri Rooden)
