@@ -1,6 +1,6 @@
 {
 	"name": "natural-compare-lite",
-	"version": "0.3.4",
+	"version": "0.4.0",
 	"license": "MIT",
 	"description": "Compare strings containing a mix of letters and numbers in the way a human being would in sort order.",
 	"main": "natural-compare.js",
@@ -35,7 +35,7 @@
 			"ff": [ 3, 3.6, 4, 18, 19, "nightly" ],
 			"chrome": [ 4, 10, 20, 24, 25, "canary" ],
 			"safari": [ 5.1, 6 ],
-			"opera": [ 10, 11, 11.6, 12, "next" ],
+			"opera": [ 10, 11, "11.6", 12, "next" ],
 			"android-browser": [ 4.2 ],
 			"iphone": [ 6 ],
 			"ipad": [ 6 ]

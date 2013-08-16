@@ -2,7 +2,7 @@
 
 
 /*
-* @version  0.3.4
+* @version  0.4.0
 * @author   Lauri Rooden - https://github.com/litejs/natural-compare-lite
 * @license  MIT License  - http://lauri.rooden.ee/mit-license.txt
 */

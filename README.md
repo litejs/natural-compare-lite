@@ -1,22 +1,21 @@
 
-[1]: https://raw.github.com/litejs/natural-compare-lite/master/min.natural-compare.js
-[2]: https://raw.github.com/litejs/natural-compare-lite/master/natural-compare.js
-[travis-img]: https://secure.travis-ci.org/litejs/natural-compare-lite.png
-[travis-url]: https://travis-ci.org/litejs/natural-compare-lite
-[nodei-img]: https://nodei.co/npm/natural-compare-lite.png
-[nodei-url]: https://nodei.co/npm/natural-compare-lite/
-[cover-img]: https://coveralls.io/repos/litejs/natural-compare-lite/badge.png
-[cover-url]: https://coveralls.io/r/litejs/natural-compare-lite
+[1]: https://secure.travis-ci.org/litejs/natural-compare-lite.png
+[2]: https://travis-ci.org/litejs/natural-compare-lite
+[3]: https://coveralls.io/repos/litejs/natural-compare-lite/badge.png
+[4]: https://coveralls.io/r/litejs/natural-compare-lite
+[5]: https://nodei.co/npm/natural-compare-lite.png
+[6]: https://nodei.co/npm/natural-compare-lite/
+[7]: https://ci.testling.com/litejs/natural-compare-lite.png
+[8]: https://ci.testling.com/litejs/natural-compare-lite
+[src]: https://raw.github.com/litejs/natural-compare-lite/master/min.natural-compare.js
+[min]: https://raw.github.com/litejs/natural-compare-lite/master/natural-compare.js
 
 
 
-Natural Compare
+Natural Compare &ndash; [![Build][1]][2] [![Coverage][3]][4]
 ===============
 
-[![Build Status][travis-img]][travis-url] 
-[![Coverage Status][cover-img]][cover-url]
-
-[![NPM][nodei-img]][nodei-url]
+[![NPM][5]][6]
 
 Compare strings containing a mix of letters and numbers
 in the way a human being would in sort order.
@@ -39,6 +38,7 @@ Use it with builtin sort() function.
 ChangeLog
 =========
 
+  * Add testling badge (Lauri Rooden)
   * Use Testman for tests (Lauri Rooden)
   * Fix order when just 0 is in string (Lauri Rooden)
   * Add coveralls badge (Lauri Rooden)
@@ -49,13 +49,11 @@ ChangeLog
   * Add installation instruction to readme (Lauri Rooden)
   * Add version to readme (Lauri Rooden)
   * Minor optimization (Lauri Rooden)
-
-2013-07-11 version v0.3
 ```
 
-Download [compressed][1] 
+Download [compressed][min] 
 (367 bytes, 258 bytes gzipped)
-or [uncompressed][2] source.
+or [uncompressed][src] source.
 
 
 
@@ -115,6 +113,10 @@ a.sort(function(a, b){
 - Removes leading zeros so "a 1" and "a 001" are equal.
 - Works well with dates in ISO format eg "Rev 2012-07-26.doc".
 
+
+### Browser Support
+
+[![browser support][7]][8]
 
 External links
 --------------
