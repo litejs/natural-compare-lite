@@ -38,6 +38,7 @@ Use it with builtin sort() function.
 ChangeLog
 =========
 
+  * Optimize (Lauri Rooden)
   * Fix order when one side contains aditional number (Lauri Rooden)
 
 2013-08-16 version v0.4
@@ -49,11 +50,10 @@ ChangeLog
   * Add coveralls badge (Lauri Rooden)
   * Add coveralls and nodei (Lauri Rooden)
   * Add more tests and improve Readme (Lauri Rooden)
-  * Add more examples to readme (Lauri Rooden)
 ```
 
 Download [compressed][min] 
-(376 bytes, 263 bytes gzipped)
+(310 bytes, 240 bytes gzipped)
 or [uncompressed][src] source.
 
 

@@ -2,6 +2,7 @@
 ChangeLog
 =========
 
+  * Optimize (Lauri Rooden)
   * Fix order when one side contains aditional number (Lauri Rooden)
 
 2013-08-16 version v0.4

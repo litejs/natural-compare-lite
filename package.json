@@ -1,6 +1,6 @@
 {
 	"name": "natural-compare-lite",
-	"version": "0.4.1",
+	"version": "0.4.2",
 	"license": "MIT",
 	"description": "Compare strings containing a mix of letters and numbers in the way a human being would in sort order.",
 	"main": "natural-compare.js",
