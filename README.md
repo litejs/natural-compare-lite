@@ -38,6 +38,11 @@ Use it with builtin sort() function.
 ChangeLog
 =========
 
+  * Fix order when one side contains aditional number (Lauri Rooden)
+
+2013-08-16 version v0.4
+-----------------------
+
   * Add testling badge (Lauri Rooden)
   * Use Testman for tests (Lauri Rooden)
   * Fix order when just 0 is in string (Lauri Rooden)
@@ -45,14 +50,10 @@ ChangeLog
   * Add coveralls and nodei (Lauri Rooden)
   * Add more tests and improve Readme (Lauri Rooden)
   * Add more examples to readme (Lauri Rooden)
-  * Update readme (Lauri Rooden)
-  * Add installation instruction to readme (Lauri Rooden)
-  * Add version to readme (Lauri Rooden)
-  * Minor optimization (Lauri Rooden)
 ```
 
 Download [compressed][min] 
-(367 bytes, 258 bytes gzipped)
+(376 bytes, 263 bytes gzipped)
 or [uncompressed][src] source.
 
 
