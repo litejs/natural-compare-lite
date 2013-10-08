@@ -38,6 +38,7 @@ Use it with builtin sort() function.
 ChangeLog
 =========
 
+  * Minor optimization (Lauri Rooden)
   * Optimize (Lauri Rooden)
   * Fix order when one side contains aditional number (Lauri Rooden)
 
@@ -49,11 +50,10 @@ ChangeLog
   * Fix order when just 0 is in string (Lauri Rooden)
   * Add coveralls badge (Lauri Rooden)
   * Add coveralls and nodei (Lauri Rooden)
-  * Add more tests and improve Readme (Lauri Rooden)
 ```
 
 Download [compressed][min] 
-(310 bytes, 240 bytes gzipped)
+(310 bytes, 236 bytes gzipped)
 or [uncompressed][src] source.
 
 
@@ -122,13 +122,13 @@ a.sort(function(a, b){
 External links
 --------------
 
-- [jsperf test](http://jsperf.com/natural-sort-2/5)
+- [jsperf test](http://jsperf.com/natural-sort-2/7)
 - [npmjs.org/package/natural-compare-lite](https://npmjs.org/package/natural-compare-lite)
 
 
 ### Licence
 
-Copyright (c) 2012 Lauri Rooden &lt;lauri@rooden.ee&gt;  
+Copyright (c) 2012, 2013 Lauri Rooden &lt;lauri@rooden.ee&gt;  
 [The MIT License](http://lauri.rooden.ee/mit-license.txt)
 
 

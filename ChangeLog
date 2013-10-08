@@ -2,6 +2,7 @@
 ChangeLog
 =========
 
+  * Minor optimization (Lauri Rooden)
   * Optimize (Lauri Rooden)
   * Fix order when one side contains aditional number (Lauri Rooden)
 
