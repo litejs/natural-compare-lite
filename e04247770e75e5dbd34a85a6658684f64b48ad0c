@@ -1,0 +1,6 @@
+tree 10421a00ea041f46f4d7d9bde09c625f85dad1c4
+parent 65a165a46c7c18f765c8850b02156c5e6c407ce1
+author Lauri Rooden <lauri@rooden.ee> 1381237730 +0300
+committer Lauri Rooden <lauri@rooden.ee> 1381237744 +0300
+
+Minor optimization
