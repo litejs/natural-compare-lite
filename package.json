@@ -1,6 +1,6 @@
 {
 	"name": "natural-compare-lite",
-	"version": "0.4.3",
+	"version": "0.4.4",
 	"license": "MIT",
 	"description": "Compare strings containing a mix of letters and numbers in the way a human being would in sort order.",
 	"main": "natural-compare.js",
@@ -13,6 +13,7 @@
 		"url": "https://github.com/litejs/natural-compare-lite/issues"
 	},
 	"scripts": {
+		"build": "node node_modules/buildman/index.js --all",
 		"travis-test": "istanbul cover ./tests/run.js && (coveralls < coverage/lcov.info || exit 0)",
 		"test": "node tests/run.js"
 	},
@@ -29,7 +30,11 @@
 	],
 	"readmeFilename": "README.md",
 	"devDependencies": {
+		"buildman": "*",
 		"testman": "*"
+	},
+	"buildman": {
+		"min.natural-compare.js": "natural-compare.js"
 	},
 	"testling": {
 		"files": "tests/run.js",
