@@ -3,8 +3,6 @@
 [2]: https://travis-ci.org/litejs/natural-compare-lite
 [3]: https://coveralls.io/repos/litejs/natural-compare-lite/badge.png
 [4]: https://coveralls.io/r/litejs/natural-compare-lite
-[5]: https://nodei.co/npm/natural-compare-lite.png
-[6]: https://nodei.co/npm/natural-compare-lite/
 [7]: https://ci.testling.com/litejs/natural-compare-lite.png
 [8]: https://ci.testling.com/litejs/natural-compare-lite
 [src]: https://raw.github.com/litejs/natural-compare-lite/master/min.natural-compare.js
@@ -12,10 +10,13 @@
 
 
 
+    @version    0.4.5
+    @date       2014-01-21
+    @stability  2 - Unstable
+
+
 Natural Compare &ndash; [![Build][1]][2] [![Coverage][3]][4]
 ===============
-
-[![NPM][5]][6]
 
 Compare strings containing a mix of letters and numbers
 in the way a human being would in sort order.
@@ -34,23 +35,6 @@ whether a reference string comes before or after or is the same
 as the given string in sort order. 
 Use it with builtin sort() function.
 
-```ChangeLog
-ChangeLog
-=========
-
-  * Minor optimization (Lauri Rooden)
-  * Optimize (Lauri Rooden)
-  * Fix order when one side contains aditional number (Lauri Rooden)
-
-2013-08-16 version v0.4
------------------------
-
-  * Add testling badge (Lauri Rooden)
-  * Use Testman for tests (Lauri Rooden)
-  * Fix order when just 0 is in string (Lauri Rooden)
-  * Add coveralls badge (Lauri Rooden)
-  * Add coveralls and nodei (Lauri Rooden)
-```
 
 Download [compressed][min] 
 (310 bytes, 236 bytes gzipped)
@@ -119,6 +103,7 @@ a.sort(function(a, b){
 
 [![browser support][7]][8]
 
+
 External links
 --------------
 
@@ -126,9 +111,10 @@ External links
 - [npmjs.org/package/natural-compare-lite](https://npmjs.org/package/natural-compare-lite)
 
 
-### Licence
+Licence
+-------
 
-Copyright (c) 2012, 2013 Lauri Rooden &lt;lauri@rooden.ee&gt;  
+Copyright (c) 2012, 2014 Lauri Rooden &lt;lauri@rooden.ee&gt;  
 [The MIT License](http://lauri.rooden.ee/mit-license.txt)
 
 
