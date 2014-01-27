@@ -1,8 +1,11 @@
 
-[1]: https://secure.travis-ci.org/litejs/natural-compare-lite.png
-[2]: https://travis-ci.org/litejs/natural-compare-lite
-[3]: https://coveralls.io/repos/litejs/natural-compare-lite/badge.png
-[4]: https://coveralls.io/r/litejs/natural-compare-lite
+[Build]: https://secure.travis-ci.org/litejs/natural-compare-lite.png
+[1]: https://travis-ci.org/litejs/natural-compare-lite
+[Coverage]: https://coveralls.io/repos/litejs/natural-compare-lite/badge.png
+[2]: https://coveralls.io/r/litejs/natural-compare-lite
+[Gittip]: http://img.shields.io/gittip/lauriro.png
+[3]: https://www.gittip.com/lauriro/
+
 [7]: https://ci.testling.com/litejs/natural-compare-lite.png
 [8]: https://ci.testling.com/litejs/natural-compare-lite
 [src]: https://raw.github.com/litejs/natural-compare-lite/master/min.natural-compare.js
@@ -10,12 +13,12 @@
 
 
 
-    @version    0.4.5
-    @date       2014-01-21
+    @version    0.4.6
+    @date       2014-01-27
     @stability  2 - Unstable
 
 
-Natural Compare &ndash; [![Build][1]][2] [![Coverage][3]][4]
+Natural Compare &ndash; [![Build][]][1] [![Coverage][]][2] [![Gittip][]][3]
 ===============
 
 Compare strings containing a mix of letters and numbers
