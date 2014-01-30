@@ -1,9 +1,9 @@
 
-[Build]: https://secure.travis-ci.org/litejs/natural-compare-lite.png
+[Build]:    http://img.shields.io/travis/litejs/natural-compare-lite.png
+[Coverage]: http://img.shields.io/coveralls/litejs/natural-compare-lite.png
+[Gittip]:   http://img.shields.io/gittip/lauriro.png
 [1]: https://travis-ci.org/litejs/natural-compare-lite
-[Coverage]: https://coveralls.io/repos/litejs/natural-compare-lite/badge.png
 [2]: https://coveralls.io/r/litejs/natural-compare-lite
-[Gittip]: http://img.shields.io/gittip/lauriro.png
 [3]: https://www.gittip.com/lauriro/
 
 [7]: https://ci.testling.com/litejs/natural-compare-lite.png
