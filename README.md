@@ -1,24 +1,20 @@
 
 [Build]:    http://img.shields.io/travis/litejs/natural-compare-lite.png
 [Coverage]: http://img.shields.io/coveralls/litejs/natural-compare-lite.png
-[Gittip]:   http://img.shields.io/gittip/lauriro.png
 [1]: https://travis-ci.org/litejs/natural-compare-lite
 [2]: https://coveralls.io/r/litejs/natural-compare-lite
-[3]: https://www.gittip.com/lauriro/
 
 [7]: https://ci.testling.com/litejs/natural-compare-lite.png
 [8]: https://ci.testling.com/litejs/natural-compare-lite
-[src]: https://raw.github.com/litejs/natural-compare-lite/master/min.natural-compare.js
-[min]: https://raw.github.com/litejs/natural-compare-lite/master/natural-compare.js
 
 
 
-    @version    0.4.6
-    @date       2014-01-27
+    @version    0.4.7
+    @date       2014-05-03
     @stability  2 - Unstable
 
 
-Natural Compare &ndash; [![Build][]][1] [![Coverage][]][2] [![Gittip][]][3]
+Natural Compare &ndash; [![Build][]][1] [![Coverage][]][2]
 ===============
 
 Compare strings containing a mix of letters and numbers
@@ -37,11 +33,6 @@ String.naturalCompare returns a number indicating
 whether a reference string comes before or after or is the same 
 as the given string in sort order. 
 Use it with builtin sort() function.
-
-
-Download [compressed][min] 
-(310 bytes, 236 bytes gzipped)
-or [uncompressed][src] source.
 
 
 
@@ -111,7 +102,8 @@ External links
 --------------
 
 - [jsperf test](http://jsperf.com/natural-sort-2/7)
-- [npmjs.org/package/natural-compare-lite](https://npmjs.org/package/natural-compare-lite)
+- [Source-code on Github](https://github.com/litejs/natural-compare-lite)
+- [Package on npm](https://npmjs.org/package/natural-compare-lite)
 
 
 Licence

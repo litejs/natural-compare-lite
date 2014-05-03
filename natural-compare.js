@@ -2,8 +2,8 @@
 
 
 /*
-* @version    0.4.6
-* @date       2014-01-27
+* @version    0.4.7
+* @date       2014-05-03
 * @stability  2 - Unstable
 * @author     Lauri Rooden (https://github.com/litejs/natural-compare-lite)
 * @license    MIT License
