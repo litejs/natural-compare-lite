@@ -1,1 +1,2 @@
+/*! litejs.com/MIT-LICENSE.txt */
 String.naturalCompare=function(e,f){if(e!=f)for(var g,b,a=1,c=0,d=0;a;){b=e.charCodeAt(c++)||0;a=f.charCodeAt(d++)||0;if(58>b&&47<b&&58>a&&47<a){for(g=c;b=e.charCodeAt(c),58>b&&47<b;c++);b=(e.slice(g-1,c)|0)+1;for(g=d;a=f.charCodeAt(d),58>a&&47<a;d++);a=(f.slice(g-1,d)|0)+1}if(b!=a)return b<a?-1:1}return 0};

@@ -9,9 +9,9 @@
 
 
 
-    @version    0.4.7
-    @date       2014-05-03
-    @stability  2 - Unstable
+    @version    1.0.0
+    @date       2014-05-14
+    @stability  3 - Stable
 
 
 Natural Compare &ndash; [![Build][]][1] [![Coverage][]][2]
@@ -101,9 +101,9 @@ a.sort(function(a, b){
 External links
 --------------
 
-- [jsperf test](http://jsperf.com/natural-sort-2/7)
-- [Source-code on Github](https://github.com/litejs/natural-compare-lite)
-- [Package on npm](https://npmjs.org/package/natural-compare-lite)
+-   [Source-code on Github](https://github.com/litejs/natural-compare-lite)
+-   [Package on npm](https://npmjs.org/package/natural-compare-lite)
+-   [jsperf test](http://jsperf.com/natural-sort-2/7)
 
 
 Licence
