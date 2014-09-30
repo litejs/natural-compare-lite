@@ -9,8 +9,8 @@
 
 
 
-    @version    1.0.0
-    @date       2014-09-29
+    @version    1.1.0
+    @date       2014-09-30
     @stability  3 - Stable
 
 

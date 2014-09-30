@@ -1,2 +1,2 @@
 /*! litejs.com/MIT-LICENSE.txt */
-String.naturalCompare=function(e,f){if(e!=f)for(var g,b,a=1,c=0,d=0;a;){b=e.charCodeAt(c++)||0;a=f.charCodeAt(d++)||0;if(58>b&&47<b&&58>a&&47<a){for(g=c;b=e.charCodeAt(c),58>b&&47<b;c++);b=(e.slice(g-1,c)|0)+1;for(g=d;a=f.charCodeAt(d),58>a&&47<a;d++);a=(f.slice(g-1,d)|0)+1}if(b!=a)return b<a?-1:1}return 0};
+String.naturalCompare=function(f,g){function h(b,c,a){a=b.charCodeAt(c)||0;return 45>a||127<a?a:46>a?65:48>a?a-1:58>a?a+18:65>a?a-11:91>a?a+11:97>a?a-37:123>a?a+5:a-63}if(f!=g)for(var k,c,b=1,d=0,e=0;b;){c=h(f,d++);b=h(g,e++);if(76>c&&65<c&&76>b&&65<b){for(k=d;c=h(f,d),76>c&&65<c;d++);c=(f.slice(k-1,d)|0)+1;for(k=e;b=h(g,e),76>b&&65<b;e++);b=(g.slice(k-1,e)|0)+1}if(c!=b)return c<b?-1:1}return 0};
