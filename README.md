@@ -89,7 +89,6 @@ a.sort(function(a, b){
 })
 ```
 
-- Removes leading zeros so "a 1" and "a 001" are equal.
 - Works well with dates in ISO format eg "Rev 2012-07-26.doc".
 
 

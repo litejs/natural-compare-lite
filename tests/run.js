@@ -1,7 +1,7 @@
 
 require("../")
 
-
+var arr = ["1.001","1.002","1.010","1.02","1.1","1.3"]
 require("testman").
 describe ("String.naturalCompare").
 	it ( "should compare strings as usual" ).
@@ -37,15 +37,10 @@ describe ("String.naturalCompare").
 		equal( String.naturalCompare("a11", "a1a"), 1 ).
 		equal( String.naturalCompare("a11a", "a1a"), 1 ).
 		equal( String.naturalCompare("a1a", "a11a"), -1 ).
-		equal( String.naturalCompare("a 1", "a 001"), 0 ).
-		equal( String.naturalCompare("a 1", "a 002"), -1 ).
-		equal( String.naturalCompare("a 2", "a 001"), 1 ).
 	it ( "should work with 0 in string" ).
 		equal( String.naturalCompare("a 0 a", "a 0 b"), -1 ).
 		equal( String.naturalCompare("a 0 a", "a 00 b"), -1 ).
-		equal( String.naturalCompare("a 00 a", "a 0 b"), -1 ).
 		equal( String.naturalCompare("a 0 b", "a 0 a"), 1 ).
-		equal( String.naturalCompare("a 00 b", "a 0 a"), 1 ).
 	it ( "should compare positive and negative number" ).
 		equal( String.naturalCompare("a 1", "a -1"), 1 ).
 		equal( String.naturalCompare("a -1", "a 1"), -1 ).
@@ -54,9 +49,10 @@ describe ("String.naturalCompare").
 		equal( String.naturalCompare("a 1", "a -2"), 1 ).
 		equal( String.naturalCompare("a -2", "a 1"), -1 ).
 		equal( String.naturalCompare("a -1", "a -1"), 0 ).
-	it ( "should preserve leading zeros on decimal fractions.", { skip: "Not implemented" } ).
-		equal( String.naturalCompare("1.01", "1.001"), -1 ).
-		equal( String.naturalCompare("1.001", "1.01"), 1 ).
-		// 1.001 < 1.002 < 1.010 < 1.02 < 1.1 < 1.3
+	it ( "should preserve leading zeros on decimal fractions.").
+		equal( String.naturalCompare("1.01", "1.001"), 1 ).
+		equal( String.naturalCompare("1.001", "1.01"), -1 ).
+		equal(arr.sort(String.naturalCompare).join(","), "1.001,1.002,1.010,1.02,1.1,1.3").
+		equal(arr.reverse().sort(String.naturalCompare).join(","), "1.001,1.002,1.010,1.02,1.1,1.3").
 done()
 

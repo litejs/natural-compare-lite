@@ -29,12 +29,13 @@ String.naturalCompare = function(a, b) {
 		codeA = getCode(a, posA++)
 		codeB = getCode(b, posB++)
 
-		if (codeA < 76 && codeA > 65 && codeB < 76 && codeB > 65) {
+		if (!i && codeA < 76 && codeB < 76 && codeA > 66 && codeB > 66) {
 			for (i = posA; codeA = getCode(a, posA), codeA < 76 && codeA > 65; posA++);
-			codeA = (a.slice(i - 1, posA) | 0) + 1
+			codeA = +a.slice(i - 1, posA)
 			for (i = posB; codeB = getCode(b, posB), codeB < 76 && codeB > 65; posB++);
-			codeB = (b.slice(i - 1, posB) | 0) + 1
+			codeB = +b.slice(i - 1, posB)
 		}
+		i = codeA == 66 || codeB == 66
 
 		if (codeA != codeB) return (codeA < codeB) ? -1 : 1
 	}
