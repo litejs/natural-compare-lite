@@ -94,6 +94,9 @@ a.sort(function(a, b){
 It is possible to configure a custom alphabet
 to achieve a desired order.
 
+At the end of alphabet after "\b" can be a translation table
+when some letters needs to be equal.
+
 ```javascript
 // Estonian alphabet
 String.alphabet = "ABDEFGHIJKLMNOPRSŠZŽTUVÕÄÖÜXYabdefghijklmnoprsšzžtuvõäöüxy"
@@ -104,6 +107,11 @@ String.alphabet = "ABDEFGHIJKLMNOPRSŠZŽTUVÕÄÖÜXYabdefghijklmnoprsšzžtuv�
 String.alphabet = "АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯабвгдеёжзийклмнопрстуфхцчшщъыьэюя"
 ["Ё", "А", "Б"].sort(String.naturalCompare)
 // ["А", "Б", "Ё"]
+
+// Spanish alphabet
+String.alphabet = "ABCDEFGHIJKLMNÑOPQRSTUVWXYZabcdefghijklmnñopqrstuvwxyz\bÁAÉEÍIÓOÚUÜUáaéeíióoúuüu"
+["á3", "a2", "á1", "piñata", "pinza"].sort(String.naturalCompare)
+// ["á1", "a2", "á3", "pinza", "piñata"]
 ```
 
 
