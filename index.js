@@ -2,7 +2,7 @@
 
 
 /*
- * @version    1.2.1
+ * @version    1.2.2
  * @date       2014-10-02
  * @stability  3 - Stable
  * @author     Lauri Rooden (https://github.com/litejs/natural-compare-lite)
@@ -20,7 +20,7 @@ String.naturalCompare = function(a, b) {
 	function getCode(str, pos, code) {
 		if (code) {
 			for (i = pos; code = getCode(str, i), code < 76 && code > 65;) ++i;
-			return +str.slice(pos - 1, i)
+			return +str.slice(pos - (str.charAt(pos - 2) == "-" ? 2 : 1), i)
 		}
 		code = alphabet && alphabet.indexOf(str.charAt(pos))
 		return code > -1 ? code + 76 : ((code = str.charCodeAt(pos) || 0), code < 45 || code > 127) ? code

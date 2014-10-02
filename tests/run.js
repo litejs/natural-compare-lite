@@ -16,6 +16,8 @@ describe ("String.naturalCompare").
 		equal( String.naturalCompare("ba", "a"), 1 ).
 		equal( String.naturalCompare("b", "aa"), 1 ).
 		equal( String.naturalCompare("ba", "aa"), 1 ).
+		equal( ["a", "c", "b", "d"].sort(String.naturalCompare)+"", "a,b,c,d" ).
+
 	it ( "should compare decimal integer substrings by their numeric value" ).
 		equal( String.naturalCompare("a", "a1"), -1 ).
 		equal( String.naturalCompare("a1", "a"), 1 ).
@@ -50,6 +52,7 @@ describe ("String.naturalCompare").
 		equal( String.naturalCompare("a 1", "a -2"), 1 ).
 		equal( String.naturalCompare("a -2", "a 1"), -1 ).
 		equal( String.naturalCompare("a -1", "a -1"), 0 ).
+		equal( [-1,1,-2,2,-10,10,-11,11,-100,100].sort(String.naturalCompare)+"", "-100,-11,-10,-2,-1,1,2,10,11,100" ).
 	it ( "should preserve leading zeros on decimal fractions.").
 		equal( String.naturalCompare("1.01", "1.001"), 1 ).
 		equal( String.naturalCompare("1.001", "1.01"), -1 ).
