@@ -2,20 +2,28 @@
 
 
 /*
-* @version    1.2.0
-* @date       2014-10-02
-* @stability  3 - Stable
-* @author     Lauri Rooden (https://github.com/litejs/natural-compare-lite)
-* @license    MIT License
-*/
+ * @version    1.2.1
+ * @date       2014-10-02
+ * @stability  3 - Stable
+ * @author     Lauri Rooden (https://github.com/litejs/natural-compare-lite)
+ * @license    MIT License
+ */
 
 
-String.naturalCompare = function(a, b, alphabet) {
-	alphabet = String.alphabet
+String.naturalCompare = function(a, b) {
+	var i, codeA
+	, codeB = 1
+	, posA = 0
+	, posB = 0
+	, alphabet = String.alphabet
 
 	function getCode(str, pos, code) {
+		if (code) {
+			for (i = pos; code = getCode(str, i), code < 76 && code > 65;) ++i;
+			return +str.slice(pos - 1, i)
+		}
 		code = alphabet && alphabet.indexOf(str.charAt(pos))
-		return code > -1 ? code + 76 : ((code = str.charCodeAt(pos) || 0), code < 45 || code > 127) ? code  //
+		return code > -1 ? code + 76 : ((code = str.charCodeAt(pos) || 0), code < 45 || code > 127) ? code
 			: code < 46 ? 65               // -
 			: code < 48 ? code - 1
 			: code < 58 ? code + 18        // 0-9
@@ -26,15 +34,15 @@ String.naturalCompare = function(a, b, alphabet) {
 			: code - 63
 	}
 
-	if ((a+="") != (b+="")) for (var i, codeA, codeB = 1, posA = 0, posB = 0; codeB;) {
+
+	if ((a+="") != (b+="")) for (;codeB;) {
 		codeA = getCode(a, posA++)
 		codeB = getCode(b, posB++)
 
 		if (!i && codeA < 76 && codeB < 76 && codeA > 66 && codeB > 66) {
-			for (i = posA; codeA = getCode(a, posA), codeA < 76 && codeA > 65; posA++);
-			codeA = +a.slice(i - 1, posA)
-			for (i = posB; codeB = getCode(b, posB), codeB < 76 && codeB > 65; posB++);
-			codeB = +b.slice(i - 1, posB)
+			codeA = getCode(a, posA, posA)
+			codeB = getCode(b, posB, posA = i)
+			posB = i
 		}
 		i = codeA == 66 || codeB == 66
 
