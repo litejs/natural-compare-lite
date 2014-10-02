@@ -23,6 +23,7 @@ describe ("String.naturalCompare").
 		equal( String.naturalCompare("1", "1"), 0 ).
 		equal( String.naturalCompare("2", "3"), -1 ).
 		equal( String.naturalCompare("3", "2"), 1 ).
+		equal( String.naturalCompare("9", "2"), 1 ).
 		equal( String.naturalCompare("1", "a"), -1 ).
 		equal( String.naturalCompare("a1", "a1"), 0 ).
 		equal( String.naturalCompare("a1", "a2"), -1 ).
@@ -54,5 +55,10 @@ describe ("String.naturalCompare").
 		equal( String.naturalCompare("1.001", "1.01"), -1 ).
 		equal(arr.sort(String.naturalCompare).join(","), "1.001,1.002,1.010,1.02,1.1,1.3").
 		equal(arr.reverse().sort(String.naturalCompare).join(","), "1.001,1.002,1.010,1.02,1.1,1.3").
+	it ( "should accept alphabet.").
+		run(function() {
+			String.alphabet = "ABDEFGHIJKLMNOPRSŠZŽTUVÕÄÖÜXYabdefghijklmnoprsšzžtuvõäöüxy"
+		}).
+		equal(["a", "ä", "B", "Š", "X", "A", "õ", "z", "1", "2", "9", "10"].sort(String.naturalCompare).join(""), "12910ABŠXazõä").
 done()
 

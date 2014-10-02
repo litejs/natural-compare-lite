@@ -4,13 +4,10 @@
 [1]: https://travis-ci.org/litejs/natural-compare-lite
 [2]: https://coveralls.io/r/litejs/natural-compare-lite
 
-[7]: https://ci.testling.com/litejs/natural-compare-lite.png
-[8]: https://ci.testling.com/litejs/natural-compare-lite
 
 
-
-    @version    1.1.0
-    @date       2014-09-30
+    @version    1.2.0
+    @date       2014-10-02
     @stability  3 - Stable
 
 
@@ -29,9 +26,9 @@ Standard sorting:   Natural order sorting:
     img2.png            img12.png
 ```
 
-String.naturalCompare returns a number indicating 
-whether a reference string comes before or after or is the same 
-as the given string in sort order. 
+String.naturalCompare returns a number indicating
+whether a reference string comes before or after or is the same
+as the given string in sort order.
 Use it with builtin sort() function.
 
 
@@ -92,9 +89,22 @@ a.sort(function(a, b){
 - Works well with dates in ISO format eg "Rev 2012-07-26.doc".
 
 
-### Browser Support
+### Custom alphabet
 
-[![browser support][7]][8]
+It is possible to configure a custom alphabet
+to achieve a desired order.
+
+```javascript
+// Estonian alphabet
+String.alphabet = "ABDEFGHIJKLMNOPRSŠZŽTUVÕÄÖÜXYabdefghijklmnoprsšzžtuvõäöüxy"
+["t", "z", "x", "õ"].sort(String.naturalCompare)
+// ["z", "t", "õ", "x"]
+
+// Russian alphabet
+String.alphabet = "АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯабвгдеёжзийклмнопрстуфхцчшщъыьэюя"
+["Ё", "А", "Б"].sort(String.naturalCompare)
+// ["А", "Б", "Ё"]
+```
 
 
 External links
@@ -102,7 +112,7 @@ External links
 
 -   [Source-code on Github](https://github.com/litejs/natural-compare-lite)
 -   [Package on npm](https://npmjs.org/package/natural-compare-lite)
--   [jsperf test](http://jsperf.com/natural-sort-2/7)
+-   [jsperf test](http://jsperf.com/natural-sort-2/12)
 
 
 Licence
