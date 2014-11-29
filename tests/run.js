@@ -1,7 +1,11 @@
 
 require("../")
 
-var arr = ["1.001","1.002","1.010","1.02","1.1","1.3"]
+var arr1 = [1.001, 1.002, 1.010, 1.02, 1.1, 1.3]
+, arr2 = [-1.001, -1.002, -1.010, -1.02, -1.1, -1.3]
+, arr3 = [0.001, 0.002, 0.010, 0.02, 0.1, 0.3]
+, arr4 = [-0.001, -0.002, -0.010, -0.02, -0.1, -0.3]
+
 require("testman").
 describe ("String.naturalCompare").
 	it ( "should compare strings as usual" ).
@@ -40,6 +44,7 @@ describe ("String.naturalCompare").
 		equal( String.naturalCompare("a11", "a1a"), 1 ).
 		equal( String.naturalCompare("a11a", "a1a"), 1 ).
 		equal( String.naturalCompare("a1a", "a11a"), -1 ).
+		equal( ['file-2.txt', 'file-1.txt', 'file-3.txt'].sort(String.naturalCompare)+"", "file-1.txt,file-2.txt,file-3.txt").
 	it ( "should work with 0 in string" ).
 		equal( String.naturalCompare("a 0 a", "a 0 b"), -1 ).
 		equal( String.naturalCompare("a 0 a", "a 00 b"), -1 ).
@@ -52,12 +57,15 @@ describe ("String.naturalCompare").
 		equal( String.naturalCompare("a 1", "a -2"), 1 ).
 		equal( String.naturalCompare("a -2", "a 1"), -1 ).
 		equal( String.naturalCompare("a -1", "a -1"), 0 ).
-		equal( [-1,1,-2,2,-10,10,-11,11,-100,100].sort(String.naturalCompare)+"", "-100,-11,-10,-2,-1,1,2,10,11,100" ).
+		equal( [-1,1,-2,2,-10,10,-11,11,-100,100].sort(String.naturalCompare)+"", "-1,-2,-10,-11,-100,1,2,10,11,100" ).
 	it ( "should preserve leading zeros on decimal fractions.").
 		equal( String.naturalCompare("1.01", "1.001"), 1 ).
 		equal( String.naturalCompare("1.001", "1.01"), -1 ).
-		equal(arr.sort(String.naturalCompare).join(","), "1.001,1.002,1.010,1.02,1.1,1.3").
-		equal(arr.reverse().sort(String.naturalCompare).join(","), "1.001,1.002,1.010,1.02,1.1,1.3").
+		equal(arr1.sort(String.naturalCompare).join(","), "1.001,1.002,1.01,1.02,1.1,1.3").
+		equal(arr1.reverse().sort(String.naturalCompare).join(","), "1.001,1.002,1.01,1.02,1.1,1.3").
+		equal(arr2.sort(String.naturalCompare).join(","), "-1.001,-1.002,-1.01,-1.02,-1.1,-1.3").
+		equal(arr3.sort(String.naturalCompare).join(","), "0.001,0.002,0.01,0.02,0.1,0.3").
+		equal(arr4.sort(String.naturalCompare).join(","), "-0.001,-0.002,-0.01,-0.02,-0.1,-0.3").
 	it ( "should accept alphabet.").
 		run(function() {
 			String.alphabet = "ABDEFGHIJKLMNOPRSŠZŽTUVÕÄÖÜXYabdefghijklmnoprsšzžtuvõäöüxy"

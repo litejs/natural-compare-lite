@@ -6,8 +6,8 @@
 
 
 
-    @version    1.2.2
-    @date       2014-10-02
+    @version    1.3.0
+    @date       2014-11-29
     @stability  3 - Stable
 
 
