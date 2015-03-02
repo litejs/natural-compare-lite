@@ -8,8 +8,8 @@
 
 
 
-    @version    1.3.0
-    @date       2014-11-29
+    @version    1.3.1
+    @date       2015-03-02
     @stability  3 - Stable
 
 
@@ -120,7 +120,7 @@ External links
 Licence
 -------
 
-Copyright (c) 2012, 2014 Lauri Rooden &lt;lauri@rooden.ee&gt;  
+Copyright (c) 2012-2015 Lauri Rooden &lt;lauri@rooden.ee&gt;  
 [The MIT License](http://lauri.rooden.ee/mit-license.txt)
 
 
