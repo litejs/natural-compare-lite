@@ -23,8 +23,7 @@
   ],
   "scripts": {
     "build": "node node_modules/buildman/index.js --all",
-    "travis-test": "istanbul cover ./tests/run.js && (coveralls < coverage/lcov.info || exit 0)",
-    "test": "node tests/run.js"
+    "test": "node tests/index.js"
   },
   "repository": "git://github.com/litejs/natural-compare-lite.git",
   "bugs": {
