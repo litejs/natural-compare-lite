@@ -10,7 +10,7 @@
  */
 
 
-String.naturalCompare = function(a, b) {
+;(this.String || this).naturalCompare = function(a, b) {
 	var i, codeA
 	, codeB = 1
 	, posA = 0
