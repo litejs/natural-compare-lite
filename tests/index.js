@@ -1,5 +1,5 @@
 
-var naturalCompare = require("../").naturalCompare
+var naturalCompare = require("../")
 
 var arr1 = [1.001, 1.002, 1.010, 1.02, 1.1, 1.3]
 , arr2 = [-1.001, -1.002, -1.010, -1.02, -1.1, -1.3]
@@ -72,4 +72,3 @@ describe ("naturalCompare").
 		}).
 		equal(["a", "ä", "B", "Š", "X", "A", "õ", "z", "1", "2", "9", "10"].sort(naturalCompare).join(""), "12910ABŠXazõä").
 done()
-

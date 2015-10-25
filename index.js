@@ -10,7 +10,7 @@
  */
 
 
-;(this.String || this).naturalCompare = function(a, b) {
+var naturalCompare = function(a, b) {
 	var i, codeA
 	, codeB = 1
 	, posA = 0
@@ -50,5 +50,8 @@
 	return 0
 }
 
-
-
+try {
+	module.exports = naturalCompare;
+} catch (e) {
+	String.naturalCompare = naturalCompare;
+}
