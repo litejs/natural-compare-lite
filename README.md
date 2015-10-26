@@ -8,8 +8,8 @@
 
 
 
-    @version    1.3.1
-    @date       2015-03-02
+    @version    1.4.0
+    @date       2015-10-26
     @stability  3 - Stable
 
 
