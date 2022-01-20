@@ -1,19 +1,14 @@
 
-[Build]:    http://img.shields.io/travis/litejs/natural-compare-lite.png
-[Coverage]: http://img.shields.io/coveralls/litejs/natural-compare-lite.png
-[1]: https://travis-ci.org/litejs/natural-compare-lite
+[1]: https://badgen.net/coveralls/c/github/litejs/natural-compare-lite
 [2]: https://coveralls.io/r/litejs/natural-compare-lite
-[npm package]: https://npmjs.org/package/natural-compare-lite
-[GitHub repo]: https://github.com/litejs/natural-compare-lite
+[3]: https://badgen.net/packagephobia/install/natural-compare-lite
+[4]: https://packagephobia.now.sh/result?p=natural-compare-lite
+[5]: https://badgen.net/badge/icon/Buy%20Me%20A%20Tea/orange?icon=kofi&label
+[6]: https://www.buymeacoffee.com/lauriro
 
 
 
-    @version    1.4.0
-    @date       2015-10-26
-    @stability  3 - Stable
-
-
-Natural Compare &ndash; [![Build][]][1] [![Coverage][]][2]
+Natural Compare &ndash;  [![Coverage][1]][2] [![size][3]][4] [![Buy Me A Tea][5]][6]
 ===============
 
 Compare strings containing a mix of letters and numbers
@@ -40,13 +35,13 @@ Use it with builtin sort() function.
 - In browser
 
 ```html
-<script src=min.natural-compare.js></script>
+<script src=natural-compare.js></script>
 ```
 
 - In node.js: `npm install natural-compare-lite`
 
 ```javascript
-require("natural-compare-lite")
+var naturalCompare = require("natural-compare-lite")
 ```
 
 ### Usage
@@ -109,18 +104,15 @@ String.alphabet = "АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬ�
 ```
 
 
-External links
---------------
+## External links
 
--   [GitHub repo][]
--   [npm package][]
--   [jsperf test](http://jsperf.com/natural-sort-2/12)
+[GitHub repo](https://github.com/litejs/natural-compare-lite) |
+[npm package](https://npmjs.org/package/natural-compare-lite)
 
 
-Licence
--------
+## Licence
 
-Copyright (c) 2012-2015 Lauri Rooden &lt;lauri@rooden.ee&gt;  
+Copyright (c) 2012-2022 Lauri Rooden &lt;lauri@rooden.ee&gt;  
 [The MIT License](http://lauri.rooden.ee/mit-license.txt)
 
 
