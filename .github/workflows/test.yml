@@ -5,20 +5,19 @@ on:
     branches: [ main ]
   pull_request:
     branches: [ main ]
-  schedule:
-    - cron: "29 1 2 * *"
   workflow_dispatch:
 
 jobs:
   Coverage:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v3
+    - name: Checkout repository
+      uses: actions/checkout@v3
     - uses: actions/setup-node@v3
     - run: npm install -g c8
     - run: npm install
     - name: Run tests
-      run: c8 -r lcov -r text-summary --check-coverage --branches=70 --functions=70 --lines=70 --statements=70 npx lj test --brief test/index.js
+      run: c8 -r lcov -r text-summary --check-coverage --branches=80 --functions=90 --lines=90 --statements=90 npx lj test --brief test/index.js
     - name: Upload coverage
       uses: coverallsapp/github-action@master
       with:
