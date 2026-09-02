@@ -108,6 +108,34 @@ describe("naturalCompare", function() {
 		.end()
 	})
 
+	.should("sort in-alphabet chars before the rest", function(assert, mock) {
+		mock.swap(String, "alphabet", "ABDEFGHIJKLMNOPRSŠZŽTUVÕÄÖÜXYabdefghijklmnoprsšzžtuvõäöüxy")
+
+		assert
+		// C, Q, W are not in the Estonian alphabet, D, S, V are
+		.equal( naturalCompare("D", "C"), -1 )
+		.equal( naturalCompare("C", "D"), 1 )
+		.equal( naturalCompare("S", "Q"), -1 )
+		.equal( naturalCompare("V", "W"), -1 )
+		.equal( naturalCompare("Dat", "Cat"), -1 )
+		// digits sort before the alphabet, the alphabet before the rest
+		.equal( naturalCompare("1", "A"), -1 )
+		.equal( naturalCompare("A", "C"), -1 )
+		.equal( naturalCompare("ü", "C"), -1 )
+		.equal( ["C", "D", "1", "õ", "W"].sort(naturalCompare)+"", "1,D,õ,C,W" )
+		.end()
+	})
+
+	.should("keep out-of-alphabet chars distinct", function(assert, mock) {
+		mock.swap(String, "alphabet", "АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯабвгдеёжзийклмнопрстуфхцчшщъыьэюя")
+
+		assert
+		.equal( naturalCompare("А", "A"), -1 )
+		.equal( naturalCompare("A", "А"), 1 )
+		.equal( naturalCompare("Б", "B"), -1 )
+		.end()
+	})
+
 	.should("ignore an empty alphabet", function(assert, mock) {
 		mock.swap(String, "alphabet", "")
 

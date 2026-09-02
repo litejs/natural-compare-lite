@@ -16,6 +16,7 @@ var naturalCompare = function(a, b) {
 	, posA = 0
 	, posB = 0
 	, alphabet = String.alphabet
+	, alen = alphabet ? alphabet.length : 0
 
 	function getCode(str, pos, code) {
 		if (code) {
@@ -23,7 +24,8 @@ var naturalCompare = function(a, b) {
 			return +str.slice(pos - 1, i)
 		}
 		code = alphabet && pos < str.length ? alphabet.indexOf(str.charAt(pos)) : -1
-		return code > -1 ? code + 76 : ((code = str.charCodeAt(pos) || 0), code < 45 || code > 127) ? code
+		if (code > -1) return code + 76    // alphabet sits right after 0-9
+		code = ((code = str.charCodeAt(pos) || 0), code < 45 || code > 127) ? code
 			: code < 46 ? 65               // -
 			: code < 48 ? code - 1
 			: code < 58 ? code + 18        // 0-9
@@ -32,6 +34,7 @@ var naturalCompare = function(a, b) {
 			: code < 97 ? code - 37
 			: code < 123 ? code + 5        // a-z
 			: code - 63
+		return code < 76 ? code : code + alen  // push the rest past the alphabet
 	}
 
 
