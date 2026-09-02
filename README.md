@@ -112,7 +112,7 @@ String.alphabet = "АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬ�
 
 ## Licence
 
-Copyright (c) 2012-2022 Lauri Rooden &lt;lauri@rooden.ee&gt;  
+Copyright (c) 2012-2026 Lauri Rooden &lt;lauri@rooden.ee&gt;  
 [The MIT License](http://lauri.rooden.ee/mit-license.txt)
 
 

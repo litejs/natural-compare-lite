@@ -1,25 +1,21 @@
 name: Test
-
-on:
-  push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
-  workflow_dispatch:
-
+on: [ push, pull_request, workflow_dispatch ]
 jobs:
   Coverage:
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v3
-    - uses: actions/setup-node@v3
-    - run: npm install -g c8
-    - run: npm install
-    - name: Run tests
-      run: c8 -r lcov -r text-summary --check-coverage --branches=80 --functions=90 --lines=90 --statements=90 npx lj test --brief test/index.js
-    - name: Upload coverage
-      uses: coverallsapp/github-action@master
+    - uses: actions/checkout@v5
+    - uses: actions/setup-node@v5
+    - run: npm install --no-audit
+    - run: npm audit --audit-level=low
+    - run: npx c8 -r lcovonly -r text --check-coverage --100 npm test
+    - uses: coverallsapp/github-action@v2
+      name: Upload to coveralls.io
       with:
-        github-token: ${{ secrets.GITHUB_TOKEN }}
+        github-token: ${{ github.token }}
+  Release:
+    if: startsWith(github.ref, 'refs/tags/v')
+    needs: [Coverage]
+    uses: litejs/.github/.github/workflows/release.yml@main
+    secrets: inherit
 

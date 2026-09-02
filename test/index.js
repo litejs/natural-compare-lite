@@ -86,6 +86,33 @@ describe("naturalCompare", function() {
 		.end()
 	})
 
+	.should("order punctuation by its mapped code", function(assert) {
+		assert
+		.equal( [ "~", "[", "0", "@", ".", "{", "_", "-", "!", " ", "A", "/", ":", "|", "^", ";" ]
+			.sort(naturalCompare).join(""), " !./:;@[^_{|~-0A" )
+		.equal( naturalCompare(":", "@"), -1 )
+		.equal( naturalCompare("[", "_"), -1 )
+		.equal( naturalCompare("{", "~"), -1 )
+		.equal( naturalCompare("@", "["), -1 )
+		.equal( naturalCompare("_", "{"), -1 )
+		.equal( naturalCompare("~", "-"), -1 )
+		.end()
+	})
+
+	.should("export to String when there is no module", function(assert) {
+		var vm = require("vm")
+		, file = require.resolve("../")
+		, sandbox = { String: {} }
+
+		vm.runInNewContext(require("fs").readFileSync(file, "utf8"), sandbox, { filename: file })
+
+		assert
+		.equal( typeof sandbox.String.naturalCompare, "function" )
+		.equal( sandbox.String.naturalCompare("a", "b"), -1 )
+		.equal( sandbox.String.naturalCompare("a10", "a9"), 1 )
+		.end()
+	})
+
 	.should("accept alphabet", function(assert, mock) {
 		mock.swap(String, "alphabet", "ABDEFGHIJKLMNOPRSŠZŽTUVÕÄÖÜXYabdefghijklmnoprsšzžtuvõäöüxy")
 
