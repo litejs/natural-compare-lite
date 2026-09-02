@@ -22,7 +22,7 @@ var naturalCompare = function(a, b) {
 			for (i = pos; code = getCode(str, i), code < 76 && code > 65;) ++i;
 			return +str.slice(pos - 1, i)
 		}
-		code = alphabet && alphabet.indexOf(str.charAt(pos))
+		code = alphabet && pos < str.length ? alphabet.indexOf(str.charAt(pos)) : -1
 		return code > -1 ? code + 76 : ((code = str.charCodeAt(pos) || 0), code < 45 || code > 127) ? code
 			: code < 46 ? 65               // -
 			: code < 48 ? code - 1

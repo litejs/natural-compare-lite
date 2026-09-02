@@ -93,5 +93,30 @@ describe("naturalCompare", function() {
 		.equal(["a", "ä", "B", "Š", "X", "A", "õ", "z", "1", "2", "9", "10"].sort(naturalCompare).join(""), "12910ABŠXazõä")
 		.end()
 	})
+
+	.should("not hang on prefixes with alphabet", function(assert, mock) {
+		mock.swap(String, "alphabet", "ABDEFGHIJKLMNOPRSZTUVXY")
+
+		assert
+		.equal( naturalCompare("A", "AA"), -1 )
+		.equal( naturalCompare("AA", "A"), 1 )
+		.equal( naturalCompare("X", "XA"), -1 )
+		.equal( naturalCompare("XA", "X"), 1 )
+		.equal( naturalCompare("z", "zB"), -1 )
+		.equal( naturalCompare("z", "z!"), -1 )
+		.equal( ["reportA", "report"].sort(naturalCompare)+"", "report,reportA" )
+		.end()
+	})
+
+	.should("ignore an empty alphabet", function(assert, mock) {
+		mock.swap(String, "alphabet", "")
+
+		assert
+		.equal( naturalCompare("a", "b"), -1 )
+		.equal( naturalCompare("foo", "bar"), 1 )
+		.equal( naturalCompare("a", "a1"), -1 )
+		.equal( naturalCompare("a1", "a11"), -1 )
+		.end()
+	})
 })
 
